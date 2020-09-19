@@ -22,7 +22,7 @@ def register():
 
         db.session.add(user)
         db.session.commit()
-        return render_template('myaccount.html')
+        return redirect(url_for("login"))
     return render_template("register.html", form=form)
 
 # Logging out route / button for users to log out

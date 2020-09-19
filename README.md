@@ -17,4 +17,4 @@ You can see how I approached this project [here](https://docs.google.com/spreads
 
 ### Methodology
 
-You can review the breakdown of each stories into an Agile methodology [here](https://docs.google.com/spreadsheets/d/1ppw6oRuBl2VWpBHOsJnKK2Dt9M12ebC3gBfQfVd9N8M/edit#gid=0). *(Under "Methodology" tab)*
+You can review the breakdown of each story into an Agile methodology [here](https://docs.google.com/spreadsheets/d/1ppw6oRuBl2VWpBHOsJnKK2Dt9M12ebC3gBfQfVd9N8M/edit#gid=0). *(Under "Methodology" tab)*
