@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+
+<p>You silly -- you are already logged in!</p>
+
+{% else %}
+
+<h1 class="justify-content-center">Welcome back! Log in and let's get started :)</h1>
+
+<form action="/login" method="post" class="form-group">
+    {{ form.hidden_tag() }}
+    <fieldset>
+        {{ form.email(class="form-control", placeholder="Email") }}
+    </fieldset>
+    <fieldset>
+        {{ form.password(class="form-control", placeholder="Password") }}
+    </fieldset>
+        {{ form.submit(class="btn btn-success") }}
+</form>
+
+{% endif %}
+
+{% endblock content %}

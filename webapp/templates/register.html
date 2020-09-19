@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+
+<p>You silly -- you already have an account, welcome back!</p>
+
+{% else %}
+
+<h1 class="justify-content-center">Create an account</h1>
+
+<form action="/register" method="post" class="form-group">
+    {{ form.hidden_tag() }}
+    <fieldset>
+        {{ form.username(class="form-control", placeholder="Username") }}
+    </fieldset>
+    <fieldset>
+        {{ form.email(class="form-control", placeholder="Email") }}
+    </fieldset>
+    <fieldset>
+        {{ form.password(class="form-control", placeholder="Password") }}
+    </fieldset>
+        {{ form.submit(class="btn btn-success") }}
+</form>
+
+{% endif %}
+
+{% endblock content %}
