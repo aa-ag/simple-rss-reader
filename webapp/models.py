@@ -14,14 +14,14 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(10), nullable=False)
 
-    # user's feed(s) / data
-    # feed = db.relationship('Post', backref='subscribed', lazy=True)
+    # TO DO: user's feed(s) / data ?
+    # TO DO: feed = db.relationship('Post', backref='subscribed', lazy=True) ?
 
     def __init__(self, username, email, password):
         self.username = username
         self.email = email
         self.password = self.hash_password(password)
-        # self.feed = feed
+        # TO DO: self.feed = feed ?
 
     def hash_password(self, password):
         self.pw_hash = generate_password_hash(password)
@@ -29,12 +29,12 @@ class User(db.Model, UserMixin):
 
 class Feed(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(300))
+    # title = db.Column(db.String(300)) ?
     link = db.Column(db.String(300))
-    date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    # TO DO: if not linking feeds to users, a user needs to be linked to their feeds
+    # date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow) ?
+    # TO DO: if not linking feeds to users, a user needs to be linked to their feeds ?
 
     def __init__(self, title, link, date_created):
-        self.title = title
+        # self.title = title ?
         self.link = link
-        self.date_created = datetime
+        # self.date_created = datetime ?

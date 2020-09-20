@@ -2,7 +2,16 @@
 {% block content %}
 
 <div class="container">
-    <p>Welcome to your account</p>
+    <p>Welcome to your account, <span><b>{{ current_user.username }}</b>!</span></p>
+
+    <p>Add a new feed to your collection:</p>
+
+    <form action="/addfeed" method="post" class="form-group">
+        <fieldset>
+            {{ feed.link(class="form-control", placeholder="Enter the URL for your feed") }}
+        </fieldset>
+            {{ feed.submit(class="btn btn-success") }}
+    </form>
 </div>
 
 {% endblock content %}

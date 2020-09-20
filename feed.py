@@ -34,10 +34,7 @@ def get_articles(parsed):
     entries = parsed['entries']
     for entry in entries:
         articles.append({
-            'id': entry['id'],
             'title': entry['title'],
-            'summary': entry['summary']
             'link': entry['link'],
-            'published': entry['published_parsed']
         })
     return articles

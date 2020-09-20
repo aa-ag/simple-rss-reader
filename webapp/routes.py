@@ -46,4 +46,19 @@ def login():
             return render_template('myaccount.html')
         else:
             return "Something went wrong. Please check your info an try again."
-    return render_template('login.html', form = form)
+    return render_template('login.html', form=form)
+
+# My Account view where users add their feeds (MVP of "my feeds / feeds  I'm subscribed to")
+
+@app.route('/addfeed', methods=['GET', 'POST'])
+def addfeed():
+    feed = AddFeedForm()
+    if request.method == 'POST' and feed.validate():
+        link = feed.link.data
+
+        f = Feed(link)
+
+        db.session.add(f)
+        db.session.commit()
+        return render_template('myaccount.html', feed=feed)
+    return render_template('myaccount.html')
